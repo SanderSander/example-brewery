@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class BeersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +11,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(BeersTableSeeder::class);
-        $this->call(BreweriesTableSeeder::class);
+        factory(App\Models\Beer::class, 20)->create();
     }
 }

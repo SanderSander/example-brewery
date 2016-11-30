@@ -20,13 +20,20 @@ window.Vue = require('vue');
 require('vue-resource');
 
 /**
+ * Set api root path
+ */
+Vue.http.options.root = '/api';
+
+/**
  * We'll register a HTTP interceptor to attach the "CSRF" header to each of
  * the outgoing requests issued by this application. The CSRF middleware
  * included with Laravel will automatically verify the header's value.
  */
 
 Vue.http.interceptors.push((request, next) => {
-    request.headers.set('X-CSRF-TOKEN', Laravel.csrfToken);
+
+    // This bugs with the google api, oauth2 is better any way
+    //request.headers.set('X-CSRF-TOKEN', Laravel.csrfToken);
 
     next();
 });
