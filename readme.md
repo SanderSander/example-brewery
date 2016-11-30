@@ -17,7 +17,7 @@ php artisan migrate
 
 Add development dataset to database. 
 
-`php artisan php artisan db:seed`
+`php artisan db:seed`
 
 Run development web server
 
